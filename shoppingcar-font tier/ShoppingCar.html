@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="utf-8">
+	<meta name="author" content="">
+	<meta name="description" content="">
+	<meta name="content" content="">
+	<title>Shopping Car</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		img{border:0 px;}
+		body{background:#f5f5f5;font-size:12px; font-family:"Times new roman";color:#666}
+		/*top div: font of page*/
+		.top{width:100%;height:270px;background:#aa3122;text-align:center;}
+		/*car div: shoping car*/
+		.car{width:960px;height:300px;margin:20px auto;}
+		.car .c_title{font-size:14px;}
+		.car .c_title span{font-size:20px;font-weight:bold;}
+		.car .c_ul{width:960px;height:200px;margin-top:20px;}
+		.car .c_ul li{list-style:none;height:50px;margin-bottom:10px;}
+		.car .c_ul .u_desc{background:#efdddd;}
+		.car .c_ul li span
+		{width:166px;height:50px;display:block;float:left;line-height:50px;text-align:center;
+		}
+		.car .c_ul .u_desc{font-weight:bold;font-size:14px;}
+		.car .c_ul .u_desc .u_name{width:460px;}
+		.car .c_ul .c_desc span a{text-decoration:none;}
+		
+		.car .c_ul .list span{display:block;}
+		.car .c_ul .list .l_info{width:460px;margin-left:20px;}
+		
+		.car .c_ul .list span a{float:left;text-decoration:none;}
+		.car .c_ul .list .l_info .l_title{margin-left:20px;}
+		
+		.shop{width:960px;height:500px;margin:0 auto;}
+		.shop h1{font-size:24px;}
+		.shop .s_ul{width:960px;margin-top:20px;}
+		.shop .s_ul li{list-style:none;background:#fff;width:220px;height:326px;float:left;
+		 margin:0 10px 20px 10px;}/*margin: top right down left*/
+		.shop .s_ul li p{width:220px;height:24px;line-height:24px;}
+		.shop .s_ul li p .s_price{font-size:20px; color:red;float:left;}
+		.shop .s_ul li p .s_number{float:right;}
+		.shop .s_ul li .add{width:220px;height:38px;display:block;background:#c40000;
+		text-align:center;line-height:38px;text-decoration:none;font-size:16px;
+		color:#fff;margin-top:10px;}
+		
+		
+		.tmui-num{position:absolute;color:#fff;font:bold 10px/18px Arial,Helvetica,san-serif;width:30px;height:30px;background:#4c95cd;border-radius:12px;background:#4c95cd;z-inex:999;text-align:center;line-height:30px;display:none;}
+	</style>
+</head>
+<body>
+
+	<div class="top">
+	<img src="image/sales.jpg" alt="sales" width="470px" height="270px"/></div>
+	<!--shopping car star-->
+	<div class="car">
+		<p class="c_title">
+			<span>My shopping car:</span> <a href="index.jsp">log in</a> to save your choice.
+		</p>
+		<!--c_ul start-->
+		<ul class="c_ul" id="shop_box">
+			<li class="u_desc">
+				<span class="u_name">Product</span>
+				<span>Price</span>
+				<span>Stock</span>
+				<span><a href="javascript:void(0);" onclick="clean_car();" style="text-decoration:none;">Empty car</a></span>
+			</li>
+			
+		</ul>
+		<!--end c_ul-->
+	</div>
+	<div class="tmui-num"></div>
+	<!--shop start-->
+	<div class="shop">
+		<h1>On sale!</h1>
+		<!--s_ul start-->
+		<ul class="s_ul">
+			<li>
+				<a href="#">
+				<img src="image/1.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection!!</p>
+				<p>
+					<span class="s_price">100euro</span> 
+					<span class="s_number">3462 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/5.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">300euro</span> 
+					<span class="s_number">499 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/6.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">65euro</span> 
+					<span class="s_number">132 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/7.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">190euro</span> 
+					<span class="s_number">3462 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/8.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">320euro</span> 
+					<span class="s_number">2471 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/9.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">260euro</span> 
+					<span class="s_number">982 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/10.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">100euro</span> 
+					<span class="s_number">6662 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			<li>
+				<a href="#">
+				<img src="image/2.jpg" alt="" width="220" height="220"/></a>
+				<p class="s_title">new collection1!!</p>
+				<p>
+					<span class="s_price">210euro</span> 
+					<span class="s_number">3920 sold!</span>
+				</p>
+				<a href="javascript:" class="add">Add to shopping car</a>
+			</li>
+			
+		</ul>
+		<!--s_ul end-->
+	</div>
+	<!--shop end-->
+	
+	<!-- insert jquery -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/tool.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		var carArr=[];
+		$(".s_ul").find(".add").click(function(){
+			// put String variable in cookie
+			var title= $(this).parent().find(".s_title").text();
+			var price= $(this).parent().find(".s_price").text();
+			var imageSrc= $(this).parent().find("img").attr("src");
+			var json={};
+			json.title=title;
+			json.price=price;
+			json.imageSrc=imageSrc;
+			carArr.push(json);
+			//json.push(json);
+			$("#shop_box").append("<li class='list'>"+
+					"<span class='l_info'>"+
+						"<a href='#'><img src='"+imageSrc+"' width='60' height='40'/></a>"+
+						"<a href='#' class='l_title'>"+title+"</a>"+
+					"</span>"+
+					"<span>"+price+"</span>"+
+					"<span>yes</span>"+
+					"</li>");
+			showNumber($(this),$("#shop_box").find("li:last"),1);
+			//d7== 7 days, m7==7 minutes, h7==7hours
+			$tmCookie.setCookie("carData",jsonToString(carArr),"d7");
+			
+			
+		});
+	});
+	
+	// clean shopping car
+	function clean_car(){
+		$("#shop_box").find("li").filter("li:gt(0)").fadeOut("slow",function(){
+			$(this).remove();
+		});
+		$.tmCookie.delCookie("carData");
+	}
+	
+	//animation of digit
+	
+	function showNumber($obj,$target,num){
+		var left = $obj.offset().left;
+		var top=$obj.offser().top;
+		var car_left=$target.offset().left;
+		var car_top=$target.offset().top;
+		$("body").append("<span class='tmui-num'>"+num+"</span>");
+		$(".tmui-num").css({left:car_left,top:car_top}).show().stop().animate({left:car_left,top:car_top},5000,function(){
+			$(this).remove();
+		});
+		//
+	}
+	
+	</script>
+</body>
+</html>

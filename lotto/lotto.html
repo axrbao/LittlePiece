@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=“utf-8">
+	<title>Lucky Wheel</title>
+		<meta name="Keywords" content="keywords,keywords">
+		<meta name="description" content="">
+		<style type="text/css">
+		*{margin:0;padding:0}
+		body{font-size:12px;font-family:Arial;background:#fee;}
+		.rotate{width:569px;height:537px;background:url("images/wheel0.jpg") no-repeat;
+		margin:50px auto;
+		position:relative;}
+		.rotate .r_point{width:190px;height:190px;
+		position:absolute;left:193px;top:155px;
+		}
+		h1{text-align:center;margin-top:50px;}
+		.layer_1{width:350px;height:200px;background:url("images/b.png");display:none;position:absolute;left:500px;top:200px;
+		font-size:36px;text-align:center;text-top:130px;font-style:bold;font-family:"华文琥珀";text-shadow:#996600 5px 5px 10px;}
+		.layer_2{width:350px;height:200px;background:url("images/b.png");display:none;position:absolute;left:500px;top:200px;
+		font-size:36px;text-align:center;text-top:130px;font-style:bold;font-family:"华文琥珀";text-shadow:#996600 5px 5px 10px;}
+		.layer_3{width:350px;height:200px;background:url("images/b.png");display:none;position:absolute;left:500px;top:200px;
+		font-size:36px;text-align:center;text-top:130px;font-style:bold;font-family:"华文琥珀";text-shadow:#996600 5px 5px 10px;}
+		.layer_4{width:350px;height:200px;background:url("images/b.png");display:none;position:absolute;left:500px;top:200px;
+		font-size:36px;text-align:center;text-top:130px;font-style:bold;font-family:"华文琥珀";text-shadow:#996600 5px 5px 10px;}
+		
+		
+		
+		</style>
+</head>
+
+<body>
+	<h1>点击开始抽奖！</h1>
+	<!--rotate start-->
+	<div class="rotate"> 
+		<div class="r_point">
+			<img src="images/pointer.png" alt="lotto" width="185px" height="190px" id="pointBtn"/>
+		</div>
+	</div>
+
+	<div class="layer_1" id="layer_1">
+	<p>恭喜您中了一等奖</p>
+	</div>
+	</div>
+	<div class="layer_2" id="layer_2">
+	<p>恭喜您中了二等奖</p>
+	</div>
+	</div>
+	<div class="layer_3" id="layer_3">
+	<p>恭喜您中了三等奖</p>
+	</div>
+	</div>
+	<div class="layer_4" id="layer_4">
+	<p>很遗憾您没有中奖</p>
+	</div>
+	<!--rotate end-->
+	<!--insert jquery-->
+	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+	<script type="text/javascript">	
+			$("#pointBtn").rotate({ 
+			   bind: 
+				 { 
+					click: function(){
+					//document.all.layer.display="none";
+						var arr=[0,1,2,3,4,4,4,4,4];
+						var result=Math.floor(Math.random()*arr.length);
+						switch(result){
+							case 1:
+									rotateTo(180,'恭喜您中了一等奖');
+									break;
+							case 2:
+									rotateTo(55,'恭喜您中了二等奖');break;
+							case 3: 
+									rotateTo(225,'恭喜您中了三等奖');break;
+							default:
+									var point=[40,70,100,200,210,260,350,320,310,360,30,10,15,20,300];
+									var result=Math.floor(Math.random()*point.length);
+									rotateTo(point[result],'很遗憾您没有中奖');break;
+						}
+						
+					}
+				 } 
+			   
+			});
+			
+			var rotateTo = function(angel,message){
+			
+				$("#pointBtn").stopRotate();
+				$("#pointBtn").rotate(0);
+				$("#pointBtn").rotate({
+					angel:0,
+					animateTo:angel+(360*4),
+					duration:5000,
+					callback:function(message){
+					if (angel==180){
+					                   document.all.layer_1.style.width=document.body.clientWidth;   
+									   document.all.layer_1.style.height=document.body.clientHeight;   
+									   document.all.layer_1.style.display="block";
+									   document.onclick=function(){
+									  document.all.layer_1.style.display="none"; };}
+						else if(angel==55){document.all.layer_2.style.width=document.body.clientWidth;   
+									   document.all.layer_2.style.height=document.body.clientHeight;   
+									   document.all.layer_2.style.display="block"; document.onclick=function(){
+									  document.all.layer_2.style.display="none"; };
+						}
+						else if(angel==225){document.all.layer_3.style.width=document.body.clientWidth;   
+									   document.all.layer_3.style.height=document.body.clientHeight;   
+									   document.all.layer_3.style.display="block"; document.onclick=function(){
+									  document.all.layer_3.style.display="none"; };
+						}
+									   else{
+									   document.all.layer_4.style.width=document.body.clientWidth;   
+									   document.all.layer_4.style.height=document.body.clientHeight;   
+									   document.all.layer_4.style.display="block"; document.onclick=function(){
+									  document.all.layer_4.style.display="none"; };}
+					 
+					}
+				});
+				
+			}
+			
+	</script>
+</body>
+</html>
